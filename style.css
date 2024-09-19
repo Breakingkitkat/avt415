@@ -1,499 +1,569 @@
-body {
-  background-color: #FFF;
-  animation: change-background 3s infinite linear;
+$tree1: #2D1427;
+$tree2: #5A0831;
+$tree3: #CD4D45;
+$range: #F46435;
+$mountain1: #F59452;
+$mountain2: #F47A45;
+$wood: #370D09;
+$pole: #791819;
+$flag: #C63737;
+$tower1: #76122C;
+$tower2: #C93D3D;
+$tower3: #821021;
+$tower4: #F4633A;
+$tower5: #4B1205;
+$tower6: #C13C45;
+
+.container {
+  position: relative;
+  width: 160px;
+  height: 335px;
+  background: #FAE0C8;
+  border-radius: 100px;
+  overflow: hidden;
 }
 
-.wrapper {
+.mountain {
   position: absolute;
-  left: 50%;
-  top: 70%;
-  transform: scale(1.5, 1.5) translate(-50%, -50%);
-}
-
-.floor {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 350px;
-  height: 5px;
-  background: #673C63;
-  transform: translate(-50%, -50%);
-  box-shadow: 0px 2px 5px #111;
-  z-index: 2;
-}
-
-.candles {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 250px;
-  height: 150px;
-  transform: translate(-50%, -100%);
-  z-index: 1;
-}
-
-.candle1 {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 35px;
-  height: 100px;
-  background: #fff;
-  border: 3px solid #673C63;
-  border-bottom: 0px;
-  border-radius: 3px;
-  transform-origin: center right;
-  transform: translate(60%, -25%);
-  box-shadow: -2px 0px 0px #95c6f2 inset;
-  animation: expand-body 3s infinite linear;
-}
-
-.candle1__stick, .candle2__stick {
-  position: absolute;
-  left: 50%;
-  top: 0%;
-  width: 3px;
-  height: 15px;
-  background: #673C63;
-  border-radius: 8px;
-  transform: translate(-50%, -100%);
-}
-
-.candle2__stick {
-  height: 12px;
-  transform-origin: bottom center;
-  animation: stick-animation 3s infinite linear;
-}
-
-.candle1__eyes, .candle2__eyes {
-  position: absolute;
-  left: 50%;
-  top: 0%;
-  width: 35px;
-  height: 30px;
-  transform: translate(-50%, 0%);
-}
-
-.candle1__eyes-one {
-  position: absolute;
-  left: 30%;
-  top: 20%;
-  width: 5px;
-  height: 5px;
-  border-radius: 100%;
-  background: #673C63;
-  transform: translate(-70%, 0%);
-  animation: blink-eyes 3s infinite linear;
-}
-
-.candle1__eyes-two {
-  position: absolute;
-  left: 70%;
-  top: 20%;
-  width: 5px;
-  height: 5px;
-  border-radius: 100%;
-  background: #673C63;
-  transform: translate(-70%, 0%);
-  animation: blink-eyes 3s infinite linear;
-}
-
-.candle1__mouth {
-  position: absolute;
-  left: 40%;
-  top: 20%;
-  width: 0px;
-  height: 0px;
-  border-radius: 20px;
-  background: #673C63;
-  transform: translate(-50%, -50%);
-  animation: uff 3s infinite linear;
-}
-
-.candle__smoke-one {
-  position: absolute;
-  left: 30%;
-  top: 50%;
-  width: 30px;
-  height: 3px;
-  background: grey;
-  transform: translate(-50%, -50%);
-  animation: move-left 3s infinite linear;
-}
-
-.candle__smoke-two {
-  position: absolute;
-  left: 30%;
-  top: 40%;
-  width: 10px;
-  height: 10px;
-  border-radius: 10px;
-  background: grey;
-  transform: translate(-50%, -50%);
-  animation: move-top 3s infinite linear;
-}
-
-.candle2 {
-  position: absolute;
-  left: 20%;
-  top: 65%;
-  width: 42px;
-  height: 60px;
-  background: #fff;
-  border: 3px solid #673C63;
-  border-bottom: 0px;
-  border-radius: 3px;
-  transform: translate(60%, -15%);
-  transform-origin: center right;
-  box-shadow: -2px 0px 0px #95c6f2 inset;
-  animation: shake-left 3s infinite linear;
-}
-
-.candle2__eyes-one {
-  position: absolute;
-  left: 30%;
-  top: 50%;
-  width: 5px;
-  height: 5px;
-  display: inline-block;
-  border: 0px solid #673C63;
-  border-radius: 100%;
-  float: left;
-  background: #673C63;
-  transform: translate(-80%, 0%);
-  animation: changeto-lower 3s infinite linear;
-}
-
-.candle2__eyes-two {
-  position: absolute;
-  left: 70%;
-  top: 50%;
-  width: 5px;
-  height: 5px;
-  display: inline-block;
-  border: 0px solid #673C63;
-  border-radius: 100%;
-  float: left;
-  background: #673C63;
-  transform: translate(-80%, 0%);
-  animation: changeto-greater 3s infinite linear;
-}
-
-.light__wave {
-  position: absolute;
-  top: 35%;
-  left: 35%;
-  width: 75px;
-  height: 75px;
-  border-radius: 100%;
-  z-index: 0;
-  transform: translate(-25%, -50%) scale(2.5, 2.5);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  animation: expand-light 3s infinite linear;
-}
-
-.candle2__fire {
-  position: absolute;
-  top: 50%;
-  left: 40%;
-  display: block;
-  width: 16px;
-  height: 20px;
-  background-color: red;
-  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-  background: #FF9800;
-  transform: translate(-50%, -50%);
-  animation: dance-fire 3s infinite linear;
-}
-
-@keyframes blink-eyes {
-  0%,35% {
-    opacity: 1;
-    transform: translate(-70%, 0%);
+  top: 0;
+  opacity: 1;
+  .backdrop {
+    position: absolute;
+    top: 80px;
+    left: -180px;
+    width: 0;
+    height: 0;
+    border-left: 260px solid transparent;
+    border-right: 260px solid transparent;
+    border-bottom: 200px solid $mountain1;
   }
-  36%,39% {
-    opacity: 0;
-    transform: translate(-70%, 0%);
-  }
-  40% {
-    opacity: 1;
-    transform: translate(-70%, 0%);
-  }
-  50%,65% {
-    transform: translate(-140%, 0%);
-  }
-  66% {
-    transform: translate(-70%, 0%);
+  .zig {
+    position: absolute;
+    width: 0;
+    height: 0;
+    transform: rotate(217deg);
+    &.zag1 {
+      top: 83px;
+      left: 70px;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 30px solid $mountain2; 
+    }
+    &.zag2 {
+      top: 94px;
+      left: 70px;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 60px solid $mountain2; 
+    }
+    &.zag3 {
+      top: 115px;
+      left: 84px;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 80px solid $mountain2; 
+    }
+    &.zag4 {
+      top: 137px;
+      left: 100px;
+      border-left: 40px solid transparent;
+      border-right: 40px solid transparent;
+      border-bottom: 100px solid $mountain2;  
+    }
   }
 }
-@keyframes expand-body {
-  0%,40% {
-    transform: scale(1, 1) translate(60%, -25%);
+
+.tree {
+  opacity: 1;
+  position: absolute;
+  & > div {
+    position: absolute;
   }
-  45%,55% {
-    transform: scale(1.1, 1.1) translate(60%, -28%);
+  &.treeFront {
+    > div {
+      border-bottom-color: $tree1;
+    }
+    &.tree1 { top: 200px; left: 0px; }
+    &.tree2 { top: 220px; left: 52px; }
+    &.tree3 { top: 238px; left: 94px; }
+    &.tree4 { top: 224px; left: 136px; }
   }
-  60% {
-    transform: scale(0.89, 0.89) translate(60%, -25%);
+  &.treeMid {
+    > div {
+      border-bottom-color: $tree2;
+    }
+    &.tree1 { top: 225px; left: 27px; }
+    &.tree2 { top: 232px; left: 67px; }
+    &.tree3 { top: 225px; left: 86px; }
+    &.tree4 { top: 223px; left: 106px; }
+    &.tree5 { top: 215px; left: 127px; }
   }
-  65% {
-    transform: scale(1, 1) translate(60%, -25%);
+  &.treeBack {
+    > div {
+      border-bottom-color: $tree3;
+    }
+    &.tree1 { top: 202px; left: -12px; }
+    &.tree2 { top: 204px; left: 17px; }
+    &.tree3 { top: 212px; left: 40px; }
+    &.tree4 { top: 210px; left: 60px; }
+    &.tree5 { top: 208px; left: 80px; }
+    &.tree6 { top: 210px; left: 98px; }
+    &.tree7 { top: 204px; left: 115px; }
+    &.tree8 { top: 202px; left: 130px; }
   }
-  70% {
-    transform: scale(0.95, 0.95) translate(60%, -25%);
+  .top {
+    border-left: 17px solid transparent;
+    border-right: 17px solid transparent;
+    border-bottom: 45px solid #000;
   }
-  75% {
-    transform: scale(1, 1) translate(60%, -25%);
+  .mid {
+    top: 16px;
+    left: -7px;
+    border-left: 24px solid transparent;
+    border-right: 24px solid transparent;
+    border-bottom: 58px solid #000;
+  }
+  .bot {
+    top: 30px;
+    left: -12px;
+    border-left: 29px solid transparent;
+    border-right: 29px solid transparent;
+    border-bottom: 68px solid #000;
+  }
+  .base {
+    top: 44px;
+    left: -16px;
+    border-left: 33px solid transparent;
+    border-right: 33px solid transparent;
+    border-bottom: 75px solid blue;
   }
 }
-@keyframes uff {
-  0%,40% {
-    width: 0px;
-    height: 0px;
+
+.range {
+  position: absolute;
+  top: 0;
+  opacity: 1;
+  > div {
+    position: absolute;
+    background: $range;
+    width: 60px;
+    height: 50px;
   }
-  50%,54% {
-    width: 15px;
-    height: 15px;
-    left: 30%;
+  .r1 {
+    top: 200px;
+    left: -22px;
+    width: 60px;
+    height: 50px;
+    transform: rotate(34deg);
   }
-  59% {
-    width: 5px;
-    height: 5px;
-    left: 20%;
+  .r2 {
+    top: 198px;
+    left: -20px;
+    transform: rotate(-8deg);
   }
-  62% {
+  .r3 {
+    top: 205px;
+    left: 24px;
+    transform: rotate(25deg);
+  }
+  .r4 {
+    top: 205px;
+    left: 50px;
+    transform: rotate(-28deg);
+  }
+  .r5 {
+    top: 200px;
+    left: 88px;
+    transform: rotate(14deg);
+  }
+  .r6 {
+    top: 200px;
+    left: 100px;
+    transform: rotate(-38deg);
+  }
+  .r7 {
+    top: 199px;
+    left: 122px;
+    transform: rotate(30deg);
+  }
+}
+
+.tower {
+  position: absolute;
+  width: 74px;
+  margin-top: 108px;
+  margin-left: calc(50% - 37px);
+  opacity: 1;
+  .shadow {
+    position: absolute;
+    z-index: 9999;
+    top: 12px;
+    width: 100%;
+    height: 42px;
+    background: #000;
+    clip-path: polygon(50% 0, 100% 40%, 100% 45%, 87% 45%, 87% 90%, 100% 90%, 100% 100%, 60% 100%, 60% 31%, 50% 0);
+    opacity: .4;
+  }
+  .flagPole {
     width: 2px;
-    height: 2px;
-    left: 20%;
+    height: 12px;
+    background: $pole;
+    margin-left: 36px;
+    &:after {
+      content: '';
+      width: 12px;
+      height: 6px;
+      background: $flag;
+      position: absolute;
+      display: block;
+    }
   }
-  67% {
-    width: 0px;
-    height: 0px;
-    left: 30%;
+  .roof1 {
+    border-left: 34px solid transparent;
+    border-right: 34px solid transparent;
+    border-bottom: 15px solid $tower1;
+  }
+  .roof2 {
+    width: 100%;
+    height: 3px;
+    background: $tower2;
+  }
+  .wall {
+    position: relative;
+    width: 76%;
+    height: 22px;
+    background: $tower3;
+    margin-left: 12%;
+    padding-top: 4px;
+    .w1, .w2, .w3, .w4, .w5 {
+      position: absolute;
+      width: 8px;
+      height: 14px;
+      background: $tower4;
+    }
+    .w1 {
+      left: 4px;
+    }
+    .w2 {
+      left: 14px;
+    }
+    .w3 {
+      left: 24px;
+    }
+    .w4 {
+      left: 34px;
+    }
+    .w5 {
+      left: 44px;
+    }
+  }
+  .legs {
+    position: relative;
+    .left,
+    .right {
+      position: absolute;
+      width: 4px;
+      height: 150px;
+      background: $wood;
+    }
+    .left {
+      transform: rotate(3deg);
+      left: 12px;
+    }
+    .right {
+      transform: rotate(-3deg);
+      right: 12px;
+    }
+    .support1,
+    .support2 {
+      position: absolute;
+      .criss,
+      .cross {
+        position: absolute;
+        left: 35px;
+        width: 4px;
+        height: 64px;
+        background: $wood;
+      }
+      .criss {
+        transform: rotate(45deg);
+      }
+      .cross {
+        transform: rotate(-45deg);
+      }
+      .flat {
+        position: absolute;
+        width: 46px;
+        height: 4px;
+        background: $wood;
+        bottom: -55px;
+        left: 14px;
+      }
+    }
+    .support1 {
+      top: -14px;
+    }
+    .support2 {
+      top: 28px;
+    }
+  }
+  .railing {
+    position: relative;
+    top: -16px;
+    .r1, .r2, .r3, .r4, .r5, .r6, .r7, .r8, .r9 {
+      position: absolute;
+      width: 2px;
+      height: 10px;
+      background: $wood;
+    }
+    .r1 { left: 5px; }
+    .r2 { left: 12px; }
+    .r3 { left: 20px; }
+    .r4 { left: 28px; }
+    .r5 { left: 36px; }
+    .r6 { left: 44px; }
+    .r7 { left: 52px; }
+    .r8 { left: 60px; }
+    .r9 { right: 5px; }
+    .top,
+    .bot1,
+    .bot2 {
+      position: absolute;
+    }
+    .top {
+      width: 100%;
+      height: 2px;
+      background: $tower5;
+    }
+    .bot1 {
+      width: 100%;
+      height: 4px;
+      top: 10px;
+      background: $tower6;
+    }
+    .bot2 {
+      width: 80%;
+      height: 2px;
+      top: 14px;
+      left: 8px;
+      background: $tower5;
+      opacity: 1;
+    }
   }
 }
-@keyframes change-background {
-  0%,59%,98%,100% {
+
+.cloud {
+  position: absolute;
+  width: 162px;
+  height: 55px;
+  overflow: hidden;
+  &.big {
+    top: 10px;
+    transform: scale(.8);
+    animation: bigCloud 4s linear;
+    animation-iteration-count: infinite;
+    animation-direction: forwards;
+  }
+  &.small {
+    top: 70px;
+    transform: scale(.4);
+    animation: smallCloud 4s linear;
+    animation-iteration-count: infinite;
+    animation-direction: forwards;
+    animation-delay: 3s;
+  }
+  .circle {
+    position: absolute;
+    border-radius: 50%;
     background: #FFF;
   }
-  61%,97% {
-    background: #000;
+  .c1 {
+    width: 32px;
+    height: 32px;
+    bottom: -15px;
   }
-}
-@keyframes move-left {
-  0%,59%,100% {
-    width: 0px;
-    left: 40%;
+  .c2 {
+    width: 35px;
+    height: 35px;
+    left: 20px;
+    bottom: 0;
   }
-  60% {
+  .c3 {
+    width: 25px;
+    height: 25px;
+    left: 48px;
+    bottom: 15px;
+  }
+  .c4 {
+    width: 35px;
+    height: 35px;
+    left: 65px;
+    bottom: 20px;
+  }
+  .c5 {
+    width: 25px;
+    height: 25px;
+    left: 94px;
+    bottom: 16px;
+  }
+  .c6 {
     width: 30px;
-    left: 30%;
+    height: 30px;
+    left: 110px;
+    bottom: -5px;
   }
-  68% {
-    width: 0px;
-    left: 20%;
+  .c7 {
+    width: 30px;
+    height: 30px;
+    left: 132px;
+    bottom: -15px;
   }
-}
-@keyframes move-top {
-  0%,64%,100% {
-    width: 0px;
-    height: 0px;
-    top: 0%;
-  }
-  65% {
-    width: 10px;
-    height: 10px;
-    top: 40%;
-    left: 40%;
-  }
-  80% {
-    width: 0px;
-    height: 0px;
-    top: 20%;
+  .c8 {
+    width: 90px;
+    height: 90px;
+    left: 30px;
+    bottom: -55px;
+    background: #FFF;
   }
 }
-@keyframes shake-left {
-  0%,40% {
-    left: 20%;
-    transform: translate(60%, -15%);
+
+@keyframes bigCloud {
+  0% {
+    transform: translateX(-200px) scale(.8);
   }
-  50%,54% {
-    left: 20%;
-    transform: translate(60%, -15%);
-  }
-  59% {
-    left: 20%;
-    transform: translate(60%, -15%);
-  }
-  62% {
-    left: 18%;
-    transform: translate(60%, -15%);
-  }
-  65% {
-    left: 21%;
-    transform: translate(60%, -15%);
-  }
-  67% {
-    left: 20%;
-    transform: translate(60%, -15%);
-  }
-  75% {
-    left: 20%;
-    transform: scale(1.15, 0.85) translate(60%, -15%);
-    background: #fff;
-    border-color: #673C63;
-  }
-  91% {
-    left: 20%;
-    transform: scale(1.18, 0.82) translate(60%, -10%);
-    background: #F44336;
-    border-color: #F44336;
-    box-shadow: -2px 0px 0px #F44336 inset;
-  }
-  92% {
-    left: 20%;
-    transform: scale(0.85, 1.15) translate(60%, -15%);
-  }
-  95% {
-    left: 20%;
-    transform: scale(1.05, 0.95) translate(60%, -15%);
-  }
-  97% {
-    left: 20%;
-    transform: scale(1, 1) translate(60%, -15%);
+  100% {
+    transform: translateX(200px) scale(.8);
   }
 }
-@keyframes stick-animation {
-  0%,40% {
-    left: 50%;
-    top: 0%;
-    transform: translate(-50%, -100%);
+
+@keyframes smallCloud {
+  0% {
+    transform: translateX(-200px) scale(.4);
   }
-  50%,54% {
-    left: 50%;
-    top: 0%;
-    transform: translate(-50%, -100%);
-  }
-  59% {
-    left: 50%;
-    top: 0%;
-    transform: translate(-50%, -100%);
-  }
-  62% {
-    left: 50%;
-    top: 0%;
-    transform: rotateZ(-15deg) translate(-50%, -100%);
-  }
-  65% {
-    left: 50%;
-    top: 0%;
-    transform: rotateZ(15deg) translate(-50%, -100%);
-  }
-  70% {
-    left: 50%;
-    top: 0%;
-    transform: rotateZ(-5deg) translate(-50%, -100%);
-  }
-  72% {
-    left: 50%;
-    top: 0%;
-    transform: rotateZ(5deg) translate(-50%, -100%);
-  }
-  74%,84% {
-    left: 50%;
-    top: 0%;
-    transform: rotateZ(0deg) translate(-50%, -100%);
-  }
-  85% {
-    transform: rotateZ(180deg) translate(0%, 120%);
-  }
-  92% {
-    left: 50%;
-    top: 0%;
-    transform: translate(-50%, -100%);
+  100% {
+    transform: translateX(200px) scale(.4);
   }
 }
-@keyframes expand-light {
-  10%,29%,59%,89% {
-    transform: translate(-25%, -50%) scale(0, 0);
-    border: 2px solid rgba(255, 255, 255, 0);
+
+.birds {
+  position: absolute;
+  z-index: 9999;
+  width: 100px;
+  height: 100px;
+  &.front {
+    animation: flyFront 4s linear;
+    animation-direction: forwards;
+    animation-iteration-count: infinite;
+    animation-delay: .5s;
+    top: 200px;
+    left: 200px;
   }
-  90%,20%,50% {
-    transform: translate(-25%, -50%) scale(1, 1);
+  &.back {
+    animation: flyBack 4s linear;
+    animation-direction: forwards;
+    animation-iteration-count: infinite;
+    animation-delay: .5s;
+    // animation-delay: 3s;
+    top: 50px;
+    left: -425px;
   }
-  95%,96%,26%,27%,56%,57% {
-    transform: translate(-25%, -50%) scale(2, 2);
-    border: 2px solid rgba(255, 255, 255, 0.5);
+  .bird {
+    position: absolute;
+    transform: scale(0.15);
   }
-  0%,28%,58%,100% {
-    transform: translate(-25%, -50%) scale(2.5, 2.5);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+  @for $i from 1 through 12 {
+    $delay: random(2) - .5 + s;
+    .b#{$i} {
+      .wing1 {
+        animation: flap .5s ease-in-out;
+        animation-iteration-count: infinite;
+        //animation-timing-function: ease;
+        animation-direction: alternate;
+        transform-origin: 0 0;
+        //animation-delay: $delay;
+        animation-duration: $delay;
+      }
+    }
+  }
+  .b1 { top: -30px; }
+  .b2 { top: -20px; left: -15px; }
+  .b3 { left: 10px; }
+  .b4 { top: 15px; left: 20px; }
+  .b5 { top: 30px; left: -5px;  }
+  .b6 { top: 45px; left: 5px; }
+  .b7 { top: -5px; left: -35px; }
+  .b8 { top: 10px; left: -25px; }
+  .b9 { top: 25px; left: -50px; }
+  .b10 { top: 40px; left: -40px; }
+  .b11 { top: -10px; left: -75px; }
+  .b12 { top: 5px; left: -65px; }
+}
+.body {
+  clip-path: polygon(0 100%, 20% 20%, 40% 0, 100% 100%, 20% 80%);
+  background: #000;
+  width: 150px;
+  height: 40px;
+}
+
+.wing1 {
+  position: relative;
+  left: 40px;
+  top: -20px;
+  width: 40px;
+  height: 50px;
+  background: #000;
+  transform: skew(10deg);
+  .wing2 {
+    position: absolute;
+    bottom: -25px;
+    left: 13px;
+    
+    transform: rotate(-5deg);
+  }
+  .wing3 {
+    width: 40px;
+    height: 30px;
+    background: #000;
+    transform: skew(40deg);
   }
 }
-@keyframes dance-fire {
-  59%,89% {
-    left: 40%;
-    width: 0px;
-    height: 0px;
+
+@keyframes flap {
+  0% {
+    transform: skew(10deg) rotateX(50deg);
   }
-  90%,0%,7%,15%,23%,31%,39%,47%,55% {
-    left: 40.8%;
-    width: 16px;
-    height: 20px;
-    background: #FFC107;
-  }
-  94%,3%,11%,19%,27%,35%,43%,51%,58% {
-    left: 41.2%;
-    width: 16px;
-    height: 20px;
-    background: #FF9800;
+  100% {
+    transform: skew(15deg) rotateX(120deg);
   }
 }
-@keyframes changeto-lower {
-  0%,70%,90% {
-    padding: 0px;
-    display: inline-block;
-    border-radius: 100%;
-    background: #673C63;
-    border-width: 0 0 0 0;
-    border: 0px solid #673C63;
-    transform: translate(-90%, 0%);
+
+@keyframes flyFront {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(15deg);
   }
-  71%,89% {
-    background: none;
-    border: solid #673C63;
-    border-radius: 0px;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 1px;
-    float: left;
-    transform-origin: bottom left;
-    transform: rotate(-45deg) translate(-50%, -65%);
-    -webkit-transform: rotate(-45deg) translate(-50%, -65%);
+  100% {
+    transform: translate3d(-600px, -150px, 0) rotate(15deg);
   }
 }
-@keyframes changeto-greater {
-  0%,70%,90% {
-    top: 50%;
-    padding: 0px;
-    display: inline-block;
-    border-radius: 100%;
-    background: #673C63;
-    border-width: 0 0 0 0;
-    border: 0px solid #673C63;
-    transform: translate(-80%, 0%);
+
+@keyframes flyBack {
+  0% {
+    transform: translate3d(0, 0, 0) scale(.6) scaleX(-1) rotate(-15deg);
   }
-  71%,89% {
-    top: 30%;
-    background: none;
-    border: solid #673C63;
-    border-radius: 0px;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 1px;
-    float: left;
-    transform-origin: bottom left;
-    transform: rotate(135deg) translate(-80%, 20%);
-    -webkit-transform: rotate(135deg) translate(-80%, 20%);
+  100% {
+    transform: translate3d(600px, -50px, 0) scale(.6) scaleX(-1) rotate(15deg);
   }
+}
+
+// floof
+html, body {
+  overflow: hidden;
+}
+body {
+  background: #E6FFFF;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
