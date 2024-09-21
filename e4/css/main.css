@@ -10,32 +10,12 @@ h1 {
   text-align: center;
   margin-top: 35vh;
 }
-.is{
-  display: none;
-}
-.sherbert-day{
-  display: block;
-}
-.interaction{
-    display:block;
-    text-align:center;
-}
 
 @media screen and (min-width: 768px) {
   body{
   background-color: darkcyan;
 }
-.is {
-  display: block;
-}
-.sherbert-day {
-  display: none;
-}
- }
-    .interaction{
-        display:none
-    }
 h1 {
   font-size: 80px;
   }
-  }
+  
