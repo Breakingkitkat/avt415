@@ -2,9 +2,8 @@ body {
   background-color: goldenrod;
 }
 h1 {
-  font-family: sans sans-serif;
+  font-family: inherit;
   font-size: 100px;
-  text-transform: none;
   letter-spacing: 1px;
   color: white;
   text-align: center;
@@ -17,6 +16,7 @@ h1 {
   display: block;
 }
 .interaction {
+  display: block;
   text-align: center;
 }
 @media screen and (min-width: 768px) {
@@ -30,11 +30,5 @@ h1 {
   display: none;
 }
 h1 {
-  font-family: sans sans-serif;
-  font-size: 100px;
-  text-transform: none;
-  letter-spacing: 1px;
-  color: white;
-  text-align: center;
-  margin-top: 45vh;
-}
+  font-size: 80px;
+  }
