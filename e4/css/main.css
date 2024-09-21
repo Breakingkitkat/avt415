@@ -4,24 +4,39 @@ body {
 h1 {
   font-family: sans sans-serif;
   font-size: 100px;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 1px;
   color: white;
   text-align: center;
   margin-top: 45vh;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   body{
-  background-color: darkcyan;
+  background-color: peachpuff;
+}
+.to {
+  display: block;
+}
+.you {
+  display: block;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
 body{
-  background-color: tomato;
+  background-color: darkcyan;
+}
+.happy {
+  display: block;
+}
+.birthday {
+  display: block;
 }
 h1 {
-  font font-size: 100px;
-  color: black;
-  margin-top: 40vh;
-  }
+  font-family: sans sans-serif;
+  font-size: 100px;
+  text-transform: none;
+  letter-spacing: 1px;
+  color: white;
+  text-align: center;
+  margin-top: 45vh;
 }
