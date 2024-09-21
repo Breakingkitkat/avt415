@@ -29,6 +29,9 @@ h1 {
 .sherbert-day {
   display: none;
 }
+ .interaction{
+    display:none
+    }
 h1 {
   font-size: 80px;
   }
