@@ -8,28 +8,26 @@ h1 {
   letter-spacing: 1px;
   color: white;
   text-align: center;
-  margin-top: 45vh;
+  margin-top: 25vh;
+}
+.it's {
+  display: none;
+}
+.sherbert-day {
+  display: block;
+}
+.interaction {
+  text-align: center;
 }
 @media screen and (min-width: 768px) {
   body{
-  background-color: peachpuff;
-}
-.to {
-  display: block;
-}
-.you {
-  display: block;
-}
-
-@media screen and (min-width: 1024px) {
-body{
   background-color: darkcyan;
 }
-.happy {
+.it's {
   display: block;
 }
-.birthday {
-  display: block;
+.sherbert-day {
+  display: none;
 }
 h1 {
   font-family: sans sans-serif;
